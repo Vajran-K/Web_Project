@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIT Infrastructure Catalogue</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            color: white;
+            min-height: 100vh;
+        }
+
+        /* Animated Gradient Background (replaces the blue gradient) */
+        .gradient-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            z-index: -1;
+        }
+
+        @keyframes gradientBG {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* Header & Navigation */
+        header {
+            background: rgba(0, 0, 0, 0.9);
+            padding: 20px;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: all 0.3s ease-in-out;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 26px;
+            font-weight: 600;
+            color: #f39c12;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 10px;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            position: relative;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #f39c12;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px;
+            display: block;
+            transition: color 0.3s ease-in-out;
+        }
+
+        nav ul li a:hover {
+            color: #e74c3c;
+        }
+
+        /* Dropdown Menu */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background: rgba(0, 0, 0, 0.8);
+            min-width: 180px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+            border-radius: 5px;
+        }
+
+        .dropdown-content a {
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            display: block;
+            transition: background 0.3s ease-in-out;
+        }
+
+        .dropdown-content a:hover {
+            background: #e74c3c;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Hero Section with Background Image */
+        .hero {
+            text-align: center;
+            background: url('pi1.jpg') no-repeat center center;
+            background-size: cover;
+            color: white;
+            padding: 120px 20px;
+            margin-top: 70px;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 1;
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            font-weight: 300;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-button {
+            background: #f39c12;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            transition: background 0.3s ease-in-out, transform 0.2s;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-button:hover {
+            background: #e67e22;
+            transform: scale(1.05);
+        }
+
+        /* Content Wrapper */
+        .content-wrapper {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Admission Portal */
+        .admission-box {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            max-width: 350px;
+            margin: 30px auto;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(5px);
+        }
+
+        .admission-box h3 {
+            font-size: 1.8rem;
+            color: #f1c40f;
+            margin-bottom: 10px;
+        }
+
+        .admission-box p {
+            font-size: 1rem;
+            font-weight: 300;
+            margin-bottom: 15px;
+        }
+
+        .apply-btn {
+            background: #f1c40f;
+            color: black;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: background 0.3s ease-in-out;
+        }
+
+        .apply-btn:hover {
+            background: #d4ac0d;
+        }
+
+        /* Infrastructure Section */
+        .infrastructure {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            padding: 50px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .infra-box {
+            background: rgba(255, 255, 255, 0.2);
+            width: 500px;
+            min-height: 250px;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            backdrop-filter: blur(5px);
+        }
+
+        .infra-box:hover {
+            transform: scale(1.03);
+        }
+
+        .infra-box h3 {
+            color: #f39c12;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .infra-box p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 25px;
+            flex-grow: 1;
+        }
+
+        .goto-button {
+            background: #3498db;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 500;
+            transition: background 0.3s ease-in-out;
+            display: inline-block;
+            margin-top: 20px;
+            align-self: center;
+        }
+
+        .goto-button:hover {
+            background: #2980b9;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .infra-box {
+                width: 450px;
+            }
+        }
+
+        @media (max-width: 1000px) {
+            .infra-box {
+                width: 400px;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .infrastructure {
+                flex-direction: column;
+                align-items: center;
+            }
+            .infra-box {
+                width: 80%;
+                max-width: 500px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hero h2 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            .infra-box {
+                width: 90%;
+                padding: 25px;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .infra-box {
+                width: 95%;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Gradient Background -->
+    <div class="gradient-bg"></div>
+    
+    <!-- Content Wrapper -->
+    <div class="content-wrapper">
+        <!-- Navigation Bar -->
+        <header>
+            <h1>VIT Infrastructure Catalogue</h1>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li class="dropdown">
+                        <a href="#">Events ▼</a>
+                        <div class="dropdown-content">
+                            <a href="#">Gravitas</a>
+                            <a href="#">Riviera</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#">Infrastructure ▼</a>
+                        <div class="dropdown-content">
+                            <a href="subfiles/auditoriums.html">Auditoriums</a>
+                            <a href="subfiles/seminar.html">Seminar Halls</a>
+                            <a href="subfiles/labs.html">Labs</a>
+                            <a href="subfiles/cells.html">Cells</a>
+                        </div>
+                    </li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <!-- Hero Section with Background Image -->
+        <section class="hero">
+            <h2>Explore VIT's World-Class Infrastructure</h2>
+            <p>Find details about auditoriums, labs, seminar halls, and more.</p>
+            <a href="#" class="cta-button">Get Started</a>
+        </section>
+
+        <!-- Admission Portal -->
+        <div class="admission-box">
+            <h3>Admissions Open!</h3>
+            <p>Apply now and be a part of VIT's world-class education.</p>
+            <a href="#" class="apply-btn">Apply Now</a>
+        </div>
+
+        <!-- Infrastructure Details - First Row -->
+        <div class="infrastructure">
+            <div class="infra-box">
+                <div>
+                    <h3>Auditoriums</h3>
+                    <p>Explore state-of-the-art auditoriums for events and lectures. Our TT and SMV auditoriums feature advanced acoustics, high-capacity seating, and cutting-edge presentation technology for all your academic and cultural needs.</p>
+                </div>
+                <a href="subfiles/auditoriums.html" class="goto-button">Go to Auditoriums</a>
+            </div>
+            
+            <div class="infra-box">
+                <div>
+                    <h3>Seminar Halls</h3>
+                    <p>Spacious halls for academic and corporate events. The GDN and CDMM seminar halls are equipped with modern amenities, perfect for workshops, guest lectures, and professional meetings.</p>
+                </div>
+                <a href="subfiles/seminar.html" class="goto-button">Go to Seminar Halls</a>
+            </div>
+        </div>
+
+        <!-- Infrastructure Details - Second Row -->
+        <div class="infrastructure">
+            <div class="infra-box">
+                <div>
+                    <h3>Labs</h3>
+                    <p>High-tech laboratories for research and development. Our TT and CDMM buildings house specialized labs for engineering, computer science, and biotechnology with the latest equipment.</p>
+                </div>
+                <a href="subfiles/labs.html" class="goto-button">Go to Labs</a>
+            </div>
+            
+            <div class="infra-box">
+                <div>
+                    <h3>Cells</h3>
+                    <p>Dedicated cells like TBI (Technology Business Incubator) and Placement Cell located in the SMV complex, providing resources and support for student growth and career development.</p>
+                </div>
+                <a href="subfiles/cells.html" class="goto-button">Go to Cells</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('VIT Infrastructure Catalogue loaded');
+            
+            const colors = [
+                ['#ee7752', '#e73c7e', '#23a6d5', '#23d5ab'],
+                ['#3a1c71', '#d76d77', '#ffaf7b'],
+                ['#11998e', '#38ef7d'],
+                ['#4568dc', '#b06ab3'],
+                ['#0575e6', '#021b79']
+            ];
+            
+            let currentIndex = 0;
+            const bgElement = document.querySelector('.gradient-bg');
+            
+            function changeGradient() {
+                currentIndex = (currentIndex + 1) % colors.length;
+                bgElement.style.background = `linear-gradient(-45deg, ${colors[currentIndex].join(', ')})`;
+                bgElement.style.backgroundSize = '400% 400%';
+            }
+            
+            setInterval(changeGradient, 20000);
+    
+            const header = document.querySelector('header');
+            let lastScrollTop = 0;
+            let isScrollingDown = false;
+            
+            window.addEventListener('scroll', function() {
+                let scrollTop = window.scrollY || document.documentElement.scrollTop;
+                
+                if (scrollTop > lastScrollTop) {
+                    if (!isScrollingDown) {
+                        header.style.transform = 'translateY(-100%)';
+                        isScrollingDown = true;
+                    }
+                } else {
+                    header.style.transform = 'translateY(0)';
+                    isScrollingDown = false;
+                }
+                lastScrollTop = scrollTop;
+            });
+        });
+    </script>
+    
+</body>
+</html>

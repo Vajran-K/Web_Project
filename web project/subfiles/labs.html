@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIT Labs & Technologies</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            color: white;
+            background: #1a1a1a;
+            min-height: 100vh;
+        }
+
+        header {
+            background: rgba(0, 0, 0, 0.9);
+            padding: 20px;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 26px;
+            font-weight: 600;
+            color: #f39c12;
+        }
+
+        /* Dropdown Menu */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background: rgba(0, 0, 0, 0.9);
+            min-width: 150px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            border-radius: 5px;
+        }
+
+        .dropdown-content a {
+            color: #f39c12;
+            padding: 10px;
+            text-decoration: none;
+            display: block;
+            transition: background 0.3s ease-in-out;
+        }
+
+        .dropdown-content a:hover {
+            background: #e74c3c;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 10px;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #f39c12;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px;
+            transition: color 0.3s ease-in-out;
+        }
+
+        nav ul li a:hover {
+            color: #e74c3c;
+        }
+
+        .content-wrapper {
+            padding: 100px 20px 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .lab {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(5px);
+        }
+
+        .lab h2 {
+            font-size: 2rem;
+            color: #f39c12;
+            margin-bottom: 10px;
+        }
+
+        .lab p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .back-link {
+            display: block;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .back-link a {
+            color: #f39c12;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .back-link a:hover {
+            color: #e74c3c;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>VIT Infrastructure Catalogue</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="auditoriums.html">Auditoriums</a></li>
+                <li><a href="galleries.html">Galleries</a></li>
+                <li><a href="labs.html">Labs</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="content-wrapper">
+        <section class="lab">
+            <h2>Computer Science Lab</h2>
+            <p>Location: Technology Tower, 3rd Floor</p>
+            <p>Technologies: High-end workstations, Python, Java, C++, AI/ML development tools, Cloud computing platforms.</p>
+        </section>
+
+        <section class="lab">
+            <h2>Embedded Systems Lab</h2>
+            <p>Location: Electronics Block, 2nd Floor</p>
+            <p>Technologies: Arduino, Raspberry Pi, Microcontrollers, FPGA boards, IoT development kits.</p>
+        </section>
+
+        <section class="lab">
+            <h2>Cyber Security Lab</h2>
+            <p>Location: Technology Tower, 4th Floor</p>
+            <p>Technologies: Ethical hacking tools, Network penetration testing, Digital forensics software, Blockchain security frameworks.</p>
+        </section>
+
+        <section class="lab">
+            <h2>Biotech Research Lab</h2>
+            <p>Location: Bioengineering Block, Ground Floor</p>
+            <p>Technologies: Gene sequencing tools, CRISPR kits, Bioinformatics software, High-resolution microscopes.</p>
+        </section>
+
+        <section class="lab">
+            <h2>Robotics & AI Lab</h2>
+            <p>Location: Innovation Center, 5th Floor</p>
+            <p>Technologies: Humanoid robots, Machine learning models, Neural networks, Automated robotic arms.</p>
+        </section>
+
+        <div class="back-link">
+            <a href="index.html">← Back to VIT Infrastructure Catalogue</a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('VIT Infrastructure Catalogue loaded');
+    
+            const header = document.querySelector('header');
+            let lastScrollTop = 0;
+            let isScrollingDown = false;
+            
+            window.addEventListener('scroll', function() {
+                let scrollTop = window.scrollY || document.documentElement.scrollTop;
+                
+                if (scrollTop > lastScrollTop) {
+                    if (!isScrollingDown) {
+                        header.style.transform = 'translateY(-100%)';
+                        isScrollingDown = true;
+                    }
+                } else {
+                    header.style.transform = 'translateY(0)';
+                    isScrollingDown = false;
+                }
+                lastScrollTop = scrollTop;
+            });
+        });
+    </script>
+</body>
+</html>

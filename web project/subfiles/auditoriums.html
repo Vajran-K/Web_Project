@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIT Auditoriums</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            color: white;
+            background: #1a1a1a;
+            min-height: 100vh;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: rgba(0, 0, 0, 0.9);
+            padding: 20px;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: all 0.3s ease-in-out;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 26px;
+            font-weight: 600;
+            color: #f39c12;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 10px;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            position: relative;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #f39c12;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px;
+            display: block;
+            transition: color 0.3s ease-in-out;
+        }
+
+        nav ul li a:hover {
+            color: #e74c3c;
+        }
+
+        /* Content Wrapper */
+        .content-wrapper {
+            padding: 100px 20px 50px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Auditorium Section */
+        .auditorium {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(5px);
+        }
+
+        .auditorium h2 {
+            font-size: 2rem;
+            color: #f39c12;
+            margin-bottom: 10px;
+        }
+
+        .auditorium p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .back-link {
+            display: block;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .back-link a {
+            color: #f39c12;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .back-link a:hover {
+            color: #e74c3c;
+        }
+                /* Dropdown Menu */
+                .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background: rgba(0, 0, 0, 0.9);
+            min-width: 150px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            border-radius: 5px;
+        }
+
+        .dropdown-content a {
+            color: #f39c12;
+            padding: 10px;
+            text-decoration: none;
+            display: block;
+            transition: background 0.3s ease-in-out;
+        }
+
+        .dropdown-content a:hover {
+            background: #e74c3c;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .auditorium h2 {
+                font-size: 1.5rem;
+            }
+
+            .auditorium p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>VIT Infrastructure Catalogue</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a href="#">Events ▼</a>
+                    <div class="dropdown-content">
+                        <a href="#">Gravitas</a>
+                        <a href="#">Riviera</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="#">Infrastructure ▼</a>
+                    <div class="dropdown-content">
+                        <a href="auditoriums.html">Auditoriums</a>
+                        <a href="#">Seminar Halls</a>
+                        <a href="#">Labs</a>
+                        <a href="#">Cells</a>
+                    </div>
+                </li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Content Wrapper -->
+    <div class="content-wrapper">
+        <!-- Anna Auditorium -->
+        <section class="auditorium">
+            <h2>Anna Auditorium</h2>
+            <p>This iconic auditorium can seat up to 1,800 people and spans 15,436 sq. feet. It's decked out with centralized air conditioning, Wi-Fi, a stellar stage, and green rooms. Located next to the volleyball and basketball courts, it's a campus landmark. :contentReference[oaicite:0]{index=0}</p>
+        </section>
+
+        <!-- Dr. M. Channa Reddy Auditorium -->
+        <section class="auditorium">
+            <h2>Dr. M. Channa Reddy Auditorium</h2>
+            <p>With a seating capacity of 469, this auditorium is perfect for mid-sized events and conferences.</p>
+        </section>
+
+        <!-- Dr. Ambedkar Auditorium -->
+        <section class="auditorium">
+            <h2>Dr. Ambedkar Auditorium</h2>
+            <p>Located in the Technology Tower, this 2,447 sq. ft. space seats 198 and is ideal for intimate gatherings and seminars. </p>
+        </section>
+
+        <!-- Kamaraj Auditorium -->
+        <section class="auditorium">
+            <h2>Kamaraj Auditorium</h2>
+            <p>Also in the Technology Tower, this auditorium offers seating for 128 in a 2,447 sq. ft. area, suitable for workshops and lectures.</p>
+        </section>
+
+        <!-- Era Sezhiyan Auditorium -->
+        <section class="auditorium">
+            <h2>Era Sezhiyan Auditorium</h2>
+            <p>Situated in the Gandhi Block, this auditorium accommodates 462 attendees, making it versatile for various events.</p>
+        </section>
+
+        <!-- Back to Main Page Link -->
+        <div class="back-link">
+            <a href="index.html">← Back to VIT Infrastructure Catalogue</a>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('VIT Infrastructure Catalogue loaded');
+    
+            const header = document.querySelector('header');
+            let lastScrollTop = 0;
+            let isScrollingDown = false;
+            
+            window.addEventListener('scroll', function() {
+                let scrollTop = window.scrollY || document.documentElement.scrollTop;
+                
+                if (scrollTop > lastScrollTop) {
+                    if (!isScrollingDown) {
+                        header.style.transform = 'translateY(-100%)';
+                        isScrollingDown = true;
+                    }
+                } else {
+                    header.style.transform = 'translateY(0)';
+                    isScrollingDown = false;
+                }
+                lastScrollTop = scrollTop;
+            });
+        });
+    </script>
+</body>
+</html>
+
+ 
